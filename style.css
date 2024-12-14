@@ -1,502 +1,107 @@
+/* Global Styles */
 body {
-    font-family: "Arial", sans-serif;
-    background-color: #f1faee;
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #f5f5f5;
     margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    font-size: 15px;
+    padding: 0;
 }
 
-.container {
-    width: 100%;
-    max-width: 320px;
-    perspective: 1000px;
+h1, h2 {
+    text-align: center;
+    margin-top: 30px;
+    color: #fff;
 }
 
-.card {
-    width: 100%;
-    min-height: 672.5px;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform 0.5s, min-height 0.5s;
-}
-
-.card.flipped {
-    transform: rotateY(180deg);
-    min-height: 550px;
-}
-
-.card-inner {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    transform-style: preserve-3d;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.card-front,
-.card-back {
-    width: 100%;
-    position: absolute;
-    backface-visibility: hidden;
-    display: flex;
-    flex-direction: column;
+/* Form container */
+.form-container {
+    max-width: 800px;
+    margin: 30px auto;
     padding: 20px;
-    box-sizing: border-box;
-    background-color: #fff;
+    background-color: #1f1f1f;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    /* Prevent content overflow */
-    transition: height 0.5s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.card-back {
-    color: white;
-    padding: 20px 20px 20px 20px;
-    transform: rotateY(180deg);
+/* Input Fields */
+input, select, button {
     width: 100%;
-    height: 100%;
-    background-size: 100%;
-    background-repeat: no-repeat;
-}
-
-.green {
-    color: #1db36c;
-    font-weight: bold;
-}
-
-.lightblue {
-    color: #19A8B5;
-}
-
-.white {
-    color: white;
-}
-
-.black {
-    color: black;
-    font-family: monospace;
-}
-
-.bitget {
-    background-image: url('images/bg_profit_card.jpeg');
-    background-color: white;
-}
-
-.bybit {
-    /* background-image: url('bg.jpg'); */
-    background-image: url('images/bybit_bg.jpg');
-}
-
-.gray {
-    color: #c4c6c8;
-}
-
-.black.bybitbottom.referralCodeRow {
-    display: flex;
-    margin: 0px 0px 0px 0px;
-}
-
-div#ROI {
-    font-size: 11px;
-}
-
-.green.small {
-    font-size: 10px;
-    background: #17721747;
-    text-align: center;
-    padding: 2px 6px !important;
-    border-radius: 3px;
-    margin: 1px 5px;
-}
-
-.red {
-    background: rgb(59 34 22 / 50%) !important;
-}
-
-.referral {
-    font-size: 16px;
-    font-weight: bolder;
-    letter-spacing: 0px;
-    word-spacing: -6px;
-}
-
-.symbol {
-    font-size: 18px !important;
-    display: flex;
-    align-items: center;
-    padding: 0px 0px 18px 0px;
-    font-weight: 600;
-}
-
-.price {
-    padding: 4px 0px 10px 0px !important;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-.profitfont {
-    font-size: 32px !important;
-    padding: 8px 0px 20px 0px !important;
-}
-
-.bybitPricelabel {
-    font-size: 11px !important;
-}
-
-.bybitQR {
-    width: 48px !important;
-    height: 48px !important;
-}
-
-.bybitCardPadding {
-    padding: 15px 15px 15px 15px;
-}
-
-label {
-    margin-bottom: 8px;
-}
-
-input[type="text"],
-input[type="number"],
-select,
-input[type="date"],
-input[type="datetime-local"] {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 16px;
-    box-sizing: border-box;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-.tab-container {
-    display: flex;
-    margin-bottom: 16px;
-}
-
-.tab {
-    flex: 1;
     padding: 10px;
-    text-align: center;
-    cursor: pointer;
-    background-color: #ddd;
-}
-
-.tab.active {
-    background-color: #28E6FE;
+    margin: 10px 0;
+    border: 1px solid #333;
+    background-color: #333;
     color: #fff;
-}
-
-.slider-container {
-    position: relative;
-    width: 100%;
-}
-
-input[type="range"] {
-    width: 100%;
-    margin-bottom: 5px;
-    -webkit-appearance: none;
-    appearance: none;
-    height: 10px;
-    background: #ddd;
-    outline: none;
     border-radius: 5px;
+    font-size: 16px;
 }
 
-input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    background: #28E6FE;
-    border-radius: 50%;
-    border: 2px solid #fff;
+/* Button Styles */
+button {
     cursor: pointer;
-    position: relative;
-    z-index: 1;
-}
-
-.slider-labels {
-    display: flex;
-    justify-content: space-between;
-    color: #555;
-    margin-bottom: 20px;
-    z-index: 2;
-}
-
-.trade-info-button {
-    background-color: #28E6FE;
-    color: #fff;
-    padding: 10px;
+    background-color: #007bff;
     border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    z-index: 10000;
+    font-size: 16px;
 }
 
-.trade-info-button:hover {
-    background-color: #28E6FE;
+button:hover {
+    background-color: #0056b3;
 }
 
-.trade-info-button:disabled {
-    background-color: #c4c6c8;
+button:disabled {
+    background-color: #444;
+    cursor: not-allowed;
 }
 
+/* Profit Summary */
+#profit-summary {
+    background-color: #252525;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 30px;
+    text-align: center;
+    color: #0dff00;
+}
+
+/* Layout tweaks */
 .row {
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 15px;
 }
 
 .column {
-    display: flex;
-    flex-direction: column;
+    width: 48%;
 }
 
-.twitterHandle {
-    padding-bottom: 23px;
-}
-
-.position {
-    font-size: 14px;
-    padding-top: 14px;
-    padding-bottom: 15px;
-}
-
-.entryPriceRow {
-    color: #c4c6c8;
-    font-size: 14px;
-    padding-bottom: 14px;
-}
-
-.currentPriceRow {
-    color: #c4c6c8;
-    font-size: 14px;
-    padding-bottom: 42px;
-}
-
-.referralCodeRow {
-    font-size: 11px;
-}
-
-.flex-evenly {
-    justify-content: space-evenly;
-}
-
-.align-center {
-    align-items: center;
-    justify-content: space-between;
-}
-
-
-.reset-button {
-    position: relative;
-    bottom: 0;
-    background-color: #28E6FE;
+/* Dark card styles */
+.card {
+    background-color: #333;
+    border-radius: 10px;
+    padding: 20px;
     color: #fff;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-top: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.reset-button:hover {
-    background-color: #28E6FE;
+.card h2 {
+    margin-top: 0;
 }
 
-.error-message {
-    color: red;
-    font-size: 12px;
-    margin-top: 4px;
-}
-
-.avatar-input {
+.card .card-body {
+    display: flex;
     justify-content: space-between;
 }
 
-.handleAvatar {
-    margin-right: 0px !important;
+.card .card-footer {
+    text-align: center;
+    padding-top: 20px;
 }
 
-.qr-input {
-    margin-bottom: 16px;
-    align-items: center;
+.card button {
+    background-color: #28a745;
+    margin-top: 20px;
+    border-radius: 5px;
 }
 
-.gap {
-    height: 45px;
-}
-
-#handleAvatar,
-.handleAvatar {
-    height: 40px;
-    width: 40px;
-    background-color: #28E6FE !important;
-    background-position: center !important;
-    background-size: contain !important;
-    border-radius: 100%;
-    margin-right: 10px;
-}
-
-#avatar {
-    width: 90%;
-    margin-bottom: 16px;
-}
-
-#outputDate {
-    letter-spacing: 1px;
-    color: #c4c6c8;
-    font-size: 13px;
-    padding: 16px 0px 29px 0px;
-}
-
-#outputHandle {
-    letter-spacing: 1px;
-    font-size: 20px;
-    padding-bottom: 3px;
-
-}
-
-#outputHandleSub {
-    font-size: 13px;
-    color: #c4c6c8;
-}
-
-.outputSymbol {
-    font-size: 22px;
-}
-
-.outputPosition {
-    padding-right: 10px;
-}
-
-.outputLeverage {
-    padding-left: 10px;
-}
-
-.outputProfit {
-    font-size: 42px;
-    padding-bottom: 14px;
-}
-
-#outputEntryPrice {
-    color: white;
-    padding-left: 50px;
-}
-
-#outputCurrentPrice {
-    color: white;
-    padding-left: 35px;
-}
-
-.qrImage {
-    width: 60px;
-    height: 60px;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-/* #qr{
-width: 80%;
-} */
-/*********************Binance style*********************/
-
-.binance-bg-rocket {
-    background-image: url(images/binance_bg_rocket.jpg);
-    height: 60% !important;
-    /* z-index: -50px; */
-}
-
-.binance-bg-circle {
-    background-image: url(images/bin_logo.png);
-    height: 60% !important;
-}
-
-span.binance-padding {
-    color: #7A7D85;
-    padding: 0px 10px 0px 10px;
-}
-
-.binance.row.position {
-    font-size: 9px;
-    padding-bottom: 6px;
-    padding-left: 6px;
-}
-
-img.binance-logo {
-    padding-top: 0px;
-    width: 70px;
-}
-
-.binance-profit {
-    font-weight: 600;
-    font-size: 28px;
-    padding-bottom: 5px;
-}
-
-.row.binance.entryPriceRow {
-    color: #7A7D85;
-    font-size: 9px;
-    padding-bottom: 0px;
-}
-
-.row.binance.currentPriceRow {
-    color: #7A7D85;
-    font-size: 9px;
-    padding-bottom: 13px;
-}
-
-.binance-color {
-    color: #FDBA0C !important;
-}
-
-img.binance.qrImage {
-    width: 30px;
-    height: 30px;
-    margin-right: 7px;
-    border: 1px solid;
-}
-
-.binance-green {
-    color: #27BA85;
-    /* color: #1db36c; */
-}
-
-.binance-code {
-    font-weight: 550;
-    font-size: 12px;
-}
-
-.binance-referral-code {
-    color: #7A7D85;
-    font-size: 8px;
-}
-
-.binance-space {
-    padding-right: 18px;
-}
-
-.binance-second-half {
-    padding-left: 15px;
-}
-
-.ß {
-    color: #7a7c83;
-}
-
-.hr {
-    border-color: #7A7D85;
-    background-color: #7A7D85;
-    border: none;
-    width: 3px;
-    height: 50px;
+.card button:hover {
+    background-color: #218838;
 }
