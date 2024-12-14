@@ -1,114 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Trade Information Form</title>
-        <link rel="stylesheet" href="style.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Profit Calculator</title>
+    <link rel="stylesheet" href="style.css"> <!-- Ensure you link the CSS file -->
+</head>
+<body>
 
-    </head>
-    <body>
+    <h1>Trading Profit Calculator</h1>
 
-        <div class="container">
-
-            <div class="card" id="tradeCard">
-
-                <div class="card-inner">
-
-                    <div class="card-front">
-                        <label for="date">Date:</label>
-                        <input type="datetime-local" id="date"
-                            oninput="validateForm()" required>
-                        <div class="row avatar-input">
-                            <div class="column" style="width:80%">
-                                <label for="avatar">Avatar Image:</label>
-                                <input type="file" id="avatar" accept="image/*"
-                                    onchange="readAvatar(this)" />
-                            </div>
-                            <div class="handleAvatar"></div>
-                        </div>
-
-                        <label for="handle">Channel Title:</label>
-                        <input type="text" id="handle" value="JustProfit"
-                            pattern="[a-zA-Z]+" oninput="validateForm()"
-                            required>
-                        <label for="handle">Channel Subtitle:</label>
-                        <input type="text" id="handleSub" value="@JustProfit"
-                            pattern="[a-zA-Z]+" oninput="validateForm()"
-                            required>
-                        <label for="symbol">Symbol:</label>
-                        <input type="text" id="symbol" value="SUIUSDT"
-                            pattern="[a-zA-Z]+" oninput="validateForm()"
-                            required>
-
-                        <div class="tab-container">
-                            <div class="tab active"
-                                onclick="setTab('Long')">Long</div>
-                            <div class="tab"
-                                onclick="setTab('Short')">Short</div>
-                        </div>
-
-                        <label for="leverage">Leverage:<span
-                                id="leverageValue">20x</span></label>
-                        <div class="slider-container">
-                            <input type="range" id="leverage" min="1" max="50"
-                                step="1" value="20" oninput="validateForm()"
-                                required>
-                            <div class="slider-labels">
-                                <span>1x</span>
-                                <span>10x</span>
-                                <span>20x</span>
-                                <span>30x</span>
-                                <span>40x</span>
-                                <span>50x</span>
-                            </div>
-                        </div>
-
-                        <label for="entryPrice">Entry Price:</label>
-                        <input type="text" id="entryPrice" value="8.2487"
-                            oninput="validateForm()"
-                            required>
-                        <div class="error-message" id="entryPriceError"></div>
-
-                        <label for="currentPrice">Current Price:</label>
-                        <input type="text" id="currentPrice" value="9.2154"
-                            oninput="validateForm()"
-                            required>
-                        <div class="error-message" id="currentPriceError"></div>
-
-                        <label for="referralCode">Referral Code:</label>
-                        <input type="text" id="referralCode"
-                            value="1XV1FJV3"
-                            oninput="validateForm()"
-                            required>
-
-                        <label for="referralCode">Card type</label>
-                        <select name="card" id="cardtype"
-                            oninput="validateForm()"
-                            required>
-                            <option value="bitget">Bitget</option>
-                            <option value="bybit">Bybit</option>
-                            <option value="binance">Binance</option>
-                        </select>
-
-                        <div class="row qr-input">
-                            <div for="qr">QR:&nbsp</div>
-                            <input type="file" id="qr" accept="image/*"
-                                onchange="readQr(this)" />
-                        </div>
-
-                        <div class="error-message" id="referralCodeError"></div>
-                        <button type="button" class="trade-info-button"
-                            id="displayTradeBtn" disabled
-                            onclick="toggleTradeInfo()">Display Trade
-                            Information</button>
-                    </div>
-                    <div class="card-back" id="output">
-
-                    </div>
-                </div>
+    <div class="form-container">
+        <h2>Enter your trading details below:</h2>
+        <div class="row">
+            <div class="column">
+                <label for="entryPrice">Entry Price:</label>
+                <input type="number" id="entryPrice" placeholder="e.g., 10000">
+            </div>
+            <div class="column">
+                <label for="currentPrice">Current Price:</label>
+                <input type="number" id="currentPrice" placeholder="e.g., 10500">
             </div>
         </div>
-        <script src="script.js"></script>
-    </body>
+
+        <div class="row">
+            <div class="column">
+                <label for="leverage">Leverage:</label>
+                <input type="number" id="leverage" placeholder="e.g., 10">
+            </div>
+            <div class="column">
+                <label for="position">Position:</label>
+                <select id="position">
+                    <option value="Long">Long</option>
+                    <option value="Short">Short</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <button id="calculateProfit" onclick="calculateProfit()">Calculate Profit</button>
+            <button id="resetForm" onclick="resetForm()">Reset</button>
+        </div>
+    </div>
+
+    <div id="profit-summary">
+        <h2>Profit Summary</h2>
+        <p id="profitDetails">Your profit will appear here.</p>
+    </div>
+
+    <script src="script.js"></script> <!-- Ensure you link your JS file -->
+</body>
 </html>
